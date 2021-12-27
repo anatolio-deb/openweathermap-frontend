@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      NODE_ENV: "development"
+      VUE_APP_API_KEY: "ae27fe68e01eb21f12f5865aa257f2df"
+      VUE_APP_API_URL: "api.openweathermap.org"
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    command: npm run serve

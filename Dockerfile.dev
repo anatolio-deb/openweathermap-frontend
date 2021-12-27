@@ -1,0 +1,6 @@
+FROM node:14.18.1-alpine
+RUN npm install -g @vue/cli
+RUN vue create app
+WORKDIR /app
+RUN vue add vuetify
+RUN apk add git
